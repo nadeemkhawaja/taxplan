@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Planning & Guidance - Comprehensive Multi-Income Strategy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            color: #1a5490;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-tab.active {
+            background: #1a5490;
+            color: white;
+            border-color: #1a5490;
+        }
+        
+        .nav-tab:hover {
+            border-color: #1a5490;
+            color: #1a5490;
+        }
+        
+        .section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .section h2 {
+            color: #1a5490;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #1a5490;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1a5490;
+            box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.1);
+        }
+        
+        .checkbox-group,
+        .radio-group {
+            margin: 1rem 0;
+        }
+        
+        .checkbox-item,
+        .radio-item {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #1a5490;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .info-box strong {
+            color: #1a5490;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.8rem; }
+            .nav-tabs { flex-direction: column; }
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: #1a5490;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0d3a6b;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background: #1a5490;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .strategy-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        
+        .strategy-card h4 {
+            color: #1a5490;
+            margin-bottom: 0.5rem;
+        }
+        
+        .strategy-card .priority {
+            display: inline-block;
+            background: #1a5490;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .strategy-card .priority.high {
+            background: #dc3545;
+        }
+        
+        .strategy-card .priority.medium {
+            background: #ffc107;
+        }
+        
+        .strategy-card .priority.low {
+            background: #6c757d;
+        }
+        
+        .result-output {
+            background: #f0f7ff;
+            border: 1px solid #b8daff;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .prompt-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .copy-btn {
+            background: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .copy-btn:hover {
+            background: #218838;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .summary-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Tax Planning & Guidance</h1>
+            <p>Comprehensive Multi-Income Strategy & Retirement Optimization</p>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('profile')">Your Profile</button>
+            <button class="nav-tab" onclick="switchTab('income')">Income Analysis</button>
+            <button class="nav-tab" onclick="switchTab('deductions')">Deductions</button>
+            <button class="nav-tab" onclick="switchTab('retirement')">Retirement Planning</button>
+            <button class="nav-tab" onclick="switchTab('strategies')">Tax Strategies</button>
+            <button class="nav-tab" onclick="switchTab('prompt')">AI Prompt</button>
+        </div>
+        
+        <!-- PROFILE SECTION -->
+        <div id="profile" class="section active">
+            <h2>Step 1: Your Tax Profile</h2>
+            
+            <div class="info-box">
+                <strong>ℹ️ Note:</strong> All information you enter here is used only for calculations within this tool. No data is stored or transmitted.
+            </div>
+            
+            <div class="grid">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="e.g., John" value="John">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="e.g., Smith" value="Smith">
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="form-group">
+                    <label for="filingStatus">Filing Status</label>
+                    <select id="filingStatus">
+                        <option value="single">Single</option>
+                        <option value="mfj" selected>Married Filing Jointly</option>
+                        <option value="mfs">Married Filing Separately</option>
+                        <option value="hoh">Head of Household</option>
+                        <option value="qw">Qualifying Widow(er)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="state">State of Residence</label>
+                    <select id="state">
+                        <option value="TX" selected>Texas (No State Income Tax)</option>
+                        <option value="FL">Florida (No State Income Tax)</option>
+                        <option value="AK">Alaska (No State Income Tax)</option>
+                        <option value="NV">Nevada (No State Income Tax)</option>
+                        <option value="SD">South Dakota (No State Income Tax)</option>
+                        <option value="WA">Washington (No State Income Tax)</option>
+                        <option value="WY">Wyoming (No State Income Tax)</option>
+                        <option value="CA">California</option>
+                        <option value="NY">New York</option>
+                        <option value="IL">Illinois</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="taxYear">Tax Year</label>
+                <input type="number" id="taxYear" value="2025" min="2020" max="2030">
+            </div>
+            
+            <h3>Dependents</h3>
+            <div class="form-group">
+                <label for="dependents">Number of Dependents (under 17 or students 17-24)</label>
+                <input type="number" id="dependents" value="1" min="0" max="10">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasSpouse" checked> Filing jointly with spouse
+                </label>
+            </div>
+            
+            <button class="btn-primary" onclick="switchTab('income')">Next: Income Analysis →</button>
+        </div>
+        
+        <!-- INCOME SECTION -->
+        <div id="income" class="section">
+            <h2>Step 2: Income Analysis</h2>
+            
+            <div class="info-box">
+                <strong>💡 Tip:</strong> Multiple income streams require coordinated tax planning. We'll analyze each separately and find interaction opportunities.
+            </div>
+            
+            <h3>W-2 Employment Income</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="w2Employer">Employer Name</label>
+                    <input type="text" id="w2Employer" placeholder="e.g., ABC Corporation" value="ABC Solutions">
+                </div>
+                <div class="form-group">
+                    <label for="w2Income">Annual W-2 Wages</label>
+                    <input type="number" id="w2Income" placeholder="0" value="95000">
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="employerRetirementPlan" value="yes"> Employer offers 401(k) or pension plan
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="employerMatch">Employer 401(k) Match (if available)</label>
+                    <input type="text" id="employerMatch" placeholder="e.g., 3% to 6%" value="No plan">
+                </div>
+            </div>
+            
+            <h3>Self-Employment Income</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasSelfEmployment"> I have self-employment income
+                </label>
+            </div>
+            
+            <div id="selfEmploymentSection" style="display: none;">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="businessName">Business Name / Structure</label>
+                        <input type="text" id="businessName" placeholder="e.g., Consulting LLC" value="XYZ Consulting LLC">
+                    </div>
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <select id="businessType">
+                            <option value="consulting">Consulting / Services</option>
+                            <option value="ecommerce">E-Commerce / Dropshipping</option>
+                            <option value="freelance">Freelance / Contract Work</option>
+                            <option value="real-estate">Real Estate / Rentals</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="seIncome">Estimated Self-Employment Income (Gross)</label>
+                        <input type="number" id="seIncome" placeholder="0" value="45000">
+                    </div>
+                    <div class="form-group">
+                        <label for="seExpenses">Estimated Business Expenses</label>
+                        <input type="number" id="seExpenses" placeholder="0" value="8000">
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Passive Income (Rental, Investments, Dividends)</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasPassive"> I have passive income
+                </label>
+            </div>
+            
+            <div id="passiveSection" style="display: none;">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="rentalIncome">Rental Income (Schedule E)</label>
+                        <input type="number" id="rentalIncome" placeholder="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="rentalExpenses">Rental Expenses</label>
+                        <input type="number" id="rentalExpenses" placeholder="0" value="0">
+                    </div>
+                </div>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="dividendIncome">Qualified Dividends</label>
+                        <input type="number" id="dividendIncome" placeholder="0" value="3200">
+                    </div>
+                    <div class="form-group">
+                        <label for="capitalGains">Long-term Capital Gains</label>
+                        <input type="number" id="capitalGains" placeholder="0" value="5100">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="capitalLoss">Capital Loss Carryforward (from prior years)</label>
+                    <input type="number" id="capitalLoss" placeholder="0" value="0">
+                    <small>Enter as negative number if applicable, e.g., -15000</small>
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateIncome()">Calculate Income Summary</button>
+            
+            <div id="incomeResult"></div>
+            
+            <button class="btn-primary" onclick="switchTab('deductions')">Next: Deductions →</button>
+        </div>
+        
+        <!-- DEDUCTIONS SECTION -->
+        <div id="deductions" class="section">
+            <h2>Step 3: Deductions & Credits</h2>
+            
+            <div class="info-box">
+                <strong>💡 Strategy:</strong> Itemizing vs. Standard Deduction is critical. With high income from multiple sources, itemizing often wins if you optimize SALT, mortgage interest, and charitable giving.
+            </div>
+            
+            <h3>Mortgage & Real Estate</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="mortgageInterest">Mortgage Interest Paid (2024 year-to-date)</label>
+                    <input type="number" id="mortgageInterest" placeholder="0" value="12500">
+                </div>
+                <div class="form-group">
+                    <label for="propertyTaxes">Property Taxes Paid</label>
+                    <input type="number" id="propertyTaxes" placeholder="0" value="6800">
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <strong>SALT Cap Note:</strong> Federal law limits SALT (State & Local Tax) deductions to $10,000/year. The OBBBA temporarily increased this cap to $80,000 for 2024–2025. Prepaying 2025 property taxes in December 2024 can maximize this advantage.
+            </div>
+            
+            <h3>Charitable Contributions</h3>
+            <div class="form-group">
+                <label for="charitableDonations">Total Charitable Donations</label>
+                <input type="number" id="charitableDonations" placeholder="0" value="4200">
+                <small>Include cash donations, appreciated securities, donations of goods</small>
+            </div>
+            
+            <h3>State & Local Taxes (SALT)</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="saltOther">Sales Tax or State Income Tax Paid</label>
+                    <input type="number" id="saltOther" placeholder="0" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleReg">Vehicle Registration & Fees</label>
+                    <input type="number" id="vehicleReg" placeholder="0" value="450">
+                </div>
+            </div>
+            
+            <h3>Health Insurance & Medical</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasHSA"> Spouse has HSA-eligible health plan (HDHP)
+                </label>
+            </div>
+            
+            <div id="hsaSection" style="display: none;">
+                <div class="form-group">
+                    <label for="hsaContribution">HSA Contribution Amount</label>
+                    <input type="number" id="hsaContribution" placeholder="0" value="4150">
+                    <small>2025 limit: $4,150 individual / $8,300 family. HSA contributions are deductible above-the-line.</small>
+                </div>
+            </div>
+            
+            <h3>Dependent & Child Credits</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="creditDependents">Number of Dependents (under 17)</label>
+                    <input type="number" id="creditDependents" value="0" min="0">
+                    <small>$2,000 credit per child under 17. Phased out at higher incomes.</small>
+                </div>
+                <div class="form-group">
+                    <label for="otherDependents">Other Qualifying Dependents (students, elderly)</label>
+                    <input type="number" id="otherDependents" value="0" min="0">
+                    <small>$500 credit each</small>
+                </div>
+            </div>
+            
+            <h3>Education Credits (if applicable)</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasEducation"> I have education expenses
+                </label>
+            </div>
+            
+            <div id="educationSection" style="display: none;">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="aotcExpenses">Qualified Tuition & Fees (AOTC)</label>
+                        <input type="number" id="aotcExpenses" placeholder="0" value="0">
+                        <small>AOTC: up to $2,500 credit. Student must be enrolled at least half-time.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="llmExpenses">Lifetime Learning Credit Expenses</label>
+                        <input type="number" id="llmExpenses" placeholder="0" value="0">
+                        <small>Up to $2,000 credit (20% of first $10,000 in expenses)</small>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateDeductions()">Calculate Deduction Summary</button>
+            
+            <div id="deductionsResult"></div>
+            
+            <button class="btn-primary" onclick="switchTab('retirement')">Next: Retirement Planning →</button>
+        </div>
+        
+        <!-- RETIREMENT SECTION -->
+        <div id="retirement" class="section">
+            <h2>Step 4: Retirement Savings & Tax-Advantaged Accounts</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ Priority:</strong> Retirement contributions are among the most valuable tax deductions available. Maximize these first.
+            </div>
+            
+            <h3>IRA Contributions</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="iraType">IRA Type</label>
+                    <select id="iraType">
+                        <option value="traditional">Traditional IRA</option>
+                        <option value="roth">Roth IRA</option>
+                        <option value="both">Both (split contribution)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="iraAmount">Contribution Amount</label>
+                    <input type="number" id="iraAmount" placeholder="0" value="7000">
+                    <small>2025 limit: $7,000 ($8,000 age 50+)</small>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <strong>Key Rule:</strong> If your employer does NOT offer a retirement plan, your spouse's Traditional IRA contribution is fully deductible regardless of income. This is a major advantage!
+            </div>
+            
+            <h3>Solo 401(k) / Self-Employment Plan</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasSolo401k"> I have self-employment income and want to establish a Solo 401(k)
+                </label>
+            </div>
+            
+            <div id="solo401kSection" style="display: none;">
+                <div class="warning-box">
+                    <strong>⚠️ Timing:</strong> The plan must be <strong>established by December 31</strong> of the tax year, but employer contributions can be made until the tax filing deadline (plus extensions). Employee deferrals must be funded by December 31.
+                </div>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="solo401kDeferred">Employee Deferral (current year)</label>
+                        <input type="number" id="solo401kDeferred" placeholder="0" value="23500">
+                        <small>2025 limit: $23,500 ($31,000 age 50+)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="solo401kEmployer">Employer Profit-Sharing Contribution</label>
+                        <input type="number" id="solo401kEmployer" placeholder="0" value="6800">
+                        <small>Up to 25% of net self-employment income</small>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>Total Solo 401(k) Potential:</strong> ~$30,300 in tax-deductible savings (employee + employer combined for 2025)
+                </div>
+            </div>
+            
+            <h3>Other Retirement Accounts</h3>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="has457b"> I have access to a 457(b) plan (government/non-profit)
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="hasSEP"> I'm considering a SEP-IRA or Solo Roth option
+                </label>
+            </div>
+            
+            <div class="info-box">
+                <strong>💡 Planning Note:</strong> For multiple income streams, coordinate your retirement contributions carefully. Solo 401(k) is usually the most flexible for self-employment income while also allowing substantial employee deferrals.
+            </div>
+            
+            <button class="btn-primary" onclick="calculateRetirement()">Calculate Retirement Savings Impact</button>
+            
+            <div id="retirementResult"></div>
+            
+            <button class="btn-primary" onclick="switchTab('strategies')">Next: Tax Strategies →</button>
+        </div>
+        
+        <!-- STRATEGIES SECTION -->
+        <div id="strategies" class="section">
+            <h2>Step 5: Advanced Tax Strategies for Multi-Income Filers</h2>
+            
+            <div class="info-box">
+                <strong>🎯 Objective:</strong> These strategies leverage the unique opportunities of having W-2 income + self-employment + investment income to legally minimize your tax burden.
+            </div>
+            
+            <h3>Strategy 1: QBI Deduction (Qualified Business Income)</h3>
+            <div class="strategy-card">
+                <div class="priority high">HIGH PRIORITY</div>
+                <h4>20% Deduction on Pass-Through Business Income</h4>
+                <p>If you have self-employment income, you may qualify for a 20% deduction on your qualified business income (QBI), subject to limitations based on W-2 wages and property basis.</p>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="qbiIncome">Estimated QBI (from self-employment)</label>
+                        <input type="number" id="qbiIncome" placeholder="0" value="37000">
+                    </div>
+                    <div class="form-group">
+                        <label for="w2WagesPaid">W-2 Wages Paid to Employees</label>
+                        <input type="number" id="w2WagesPaid" placeholder="0" value="0">
+                    </div>
+                </div>
+                
+                <button class="btn-secondary" onclick="calculateQBI()">Calculate QBI Deduction</button>
+                <div id="qbiResult"></div>
+            </div>
+            
+            <h3>Strategy 2: Capital Loss Harvesting</h3>
+            <div class="strategy-card">
+                <div class="priority high">HIGH PRIORITY</div>
+                <h4>Deploy Carryforward Losses Strategically</h4>
+                <p>If you have capital loss carryforwards from prior years (e.g., from a failed investment or business liquidation), you can use up to $3,000/year against ordinary income. Excess carries forward indefinitely.</p>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="lossCarryforward">Capital Loss Carryforward Available</label>
+                        <input type="number" id="lossCarryforward" placeholder="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="capitalGainsThisYear">Expected Capital Gains (this year)</label>
+                        <input type="number" id="capitalGainsThisYear" placeholder="0" value="5100">
+                    </div>
+                </div>
+                
+                <button class="btn-secondary" onclick="calculateLossHarvest()">Calculate Loss Utilization</button>
+                <div id="lossResult"></div>
+            </div>
+            
+            <h3>Strategy 3: Dependent Employment & Payroll Planning</h3>
+            <div class="strategy-card">
+                <div class="priority medium">MEDIUM PRIORITY</div>
+                <h4>Employ Family Members in Your Business</h4>
+                <p>If you employ dependents (teenagers, college students) through your business, you can deduct their wages and they benefit from low tax brackets. Must document real work and issue proper W-2s or 1099-NEC.</p>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="dependentName">Dependent's Name / ID</label>
+                        <input type="text" id="dependentName" placeholder="e.g., Child A" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="dependentWages">Anticipated Wages (if hired)</label>
+                        <input type="number" id="dependentWages" placeholder="0" value="15000">
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <strong>Requirements:</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Must be a legitimate employee under dependency test</li>
+                        <li>Work must be real and documented</li>
+                        <li>Wages must be reasonable for the work</li>
+                        <li>Must issue W-2 if over $600; otherwise 1099-NEC</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Strategy 4: Mileage Tracking & Business Use of Home</h3>
+            <div class="strategy-card">
+                <div class="priority high">HIGH PRIORITY</div>
+                <h4>Maximize Deductible Business Expenses</h4>
+                <p><strong>Mileage:</strong> Track business miles (client visits, supplies, etc.) at the IRS standard rate (~0.70/mile for 2024). <strong>Home Office:</strong> If you use a dedicated room/space, deduct a portion of rent/mortgage, utilities, insurance.</p>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="businessMiles">Estimated Annual Business Miles</label>
+                        <input type="number" id="businessMiles" placeholder="0" value="4200">
+                    </div>
+                    <div class="form-group">
+                        <label for="homeOfficeSqFt">Home Office Square Footage (if applicable)</label>
+                        <input type="number" id="homeOfficeSqFt" placeholder="0" value="200">
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>Tracking Tools:</strong> MileIQ, Everlance, or manual logs. Start TODAY — prior years cannot be recovered without contemporaneous records.
+                </div>
+            </div>
+            
+            <h3>Strategy 5: 1099-NEC Filing & Contractor Classification</h3>
+            <div class="strategy-card">
+                <div class="priority high">HIGH PRIORITY</div>
+                <h4>Proper Tax Reporting for Contractors & Vendors</h4>
+                <p>If you pay domestic contractors >$600/year, file Form 1099-NEC. Filing deadlines: January 31 to recipients, January 31 to IRS (or Feb 28 if filing electronically).</p>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="has1099"> I paid contractors in 2024 / will pay in 2025
+                    </label>
+                </div>
+                
+                <div id="contractor1099Section" style="display: none;">
+                    <div class="grid">
+                        <div class="form-group">
+                            <label for="contractor1099Amount">Total Amount Paid to Contractors (>$600 threshold)</label>
+                            <input type="number" id="contractor1099Amount" placeholder="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="contractorCount">Number of Contractors</label>
+                            <input type="number" id="contractorCount" placeholder="0" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ Compliance Note:</strong> Failure to file 1099-NEC can result in penalties ($50–$270+ per form). Use Tax1099.com or your CPA's filing service for late filings.
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Strategy 6: Health Insurance Premium Deduction (Self-Employed)</h3>
+            <div class="strategy-card">
+                <div class="priority medium">MEDIUM PRIORITY</div>
+                <h4>Above-the-Line Deduction for Health Insurance</h4>
+                <p><strong>Caveat:</strong> If you're eligible for employer-sponsored health insurance through your W-2 job, you CANNOT deduct premiums for self-funded plans. However, if no employer plan is available, you can deduct 100% of premiums you pay for yourself, spouse, and dependents.</p>
+                
+                <div class="form-group">
+                    <label for="healthInsurancePremium">Annual Health Insurance Premiums (if no employer plan)</label>
+                    <input type="number" id="healthInsurancePremium" placeholder="0" value="0">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="switchTab('prompt')">Next: Generate AI Prompt →</button>
+        </div>
+        
+        <!-- PROMPT SECTION -->
+        <div id="prompt" class="section">
+            <h2>Step 6: AI Prompt for Claude, ChatGPT, or Other LLMs</h2>
+            
+            <div class="success-box">
+                <strong>✅ Ready to use:</strong> Copy the prompt below and paste it into Claude, ChatGPT, or any AI tool. It includes all your inputs and will generate personalized tax strategies.
+            </div>
+            
+            <h3>Your Personalized Tax Planning Prompt</h3>
+            
+            <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt to Clipboard</button>
+            
+            <div class="prompt-box" id="generatedPrompt">
+[Loading prompt...]
+            </div>
+            
+            <h3>How to Use This Prompt</h3>
+            <ol style="margin-left: 2rem; line-height: 1.8;">
+                <li><strong>Copy the prompt above.</strong></li>
+                <li><strong>Go to:</strong> Claude (claude.ai), ChatGPT, or your preferred AI platform.</li>
+                <li><strong>Paste the prompt</strong> into a new chat.</li>
+                <li><strong>Follow up with questions:</strong> "Should I max out my Solo 401(k)?" or "Is the capital loss strategy viable?"</li>
+                <li><strong>Get detailed, personalized tax advice</strong> tailored to your financial situation.</li>
+            </ol>
+            
+            <div class="info-box">
+                <strong>💡 Pro Tip:</strong> Save your prompt in a note app or document. You can reuse it each quarter to adjust projections, or each year to update your strategy.
+            </div>
+            
+            <h3>Sample Follow-Up Questions</h3>
+            <div style="margin: 1rem 0;">
+                <button class="btn-secondary" onclick="appendFollowUp('Should I max out my Solo 401(k) deferral, or focus on employer profit-sharing?')">Solo 401(k) Strategy</button>
+                <button class="btn-secondary" onclick="appendFollowUp('How can I optimize my capital loss carryforward across my investment portfolio?')">Capital Loss Optimization</button>
+                <button class="btn-secondary" onclick="appendFollowUp('What is the QBI deduction limit for my situation, and how does it interact with my W-2 income?')">QBI Deduction</button>
+                <button class="btn-secondary" onclick="appendFollowUp('Should I consider a 529 education savings plan for my dependent?')">Education Planning</button>
+                <button class="btn-secondary" onclick="appendFollowUp('What are the audit risks for the strategies you recommended?')">Audit Risk Analysis</button>
+            </div>
+            
+            <h3>Advanced Prompt Customization</h3>
+            <div class="form-group">
+                <label for="customPrompt">Add custom context or questions:</label>
+                <textarea id="customPrompt" rows="4" placeholder="e.g., 'I'm also considering moving states next year. How does that affect my plan?'"></textarea>
+            </div>
+            
+            <button class="btn-primary" onclick="generatePrompt()">🔄 Regenerate Prompt with Custom Questions</button>
+            
+            <div class="disclaimer">
+                <strong>⚠️ Disclaimer:</strong> This tool provides general tax planning guidance. It is not professional tax advice. Consult with a CPA, tax attorney, or enrolled agent before implementing any strategy, especially for items over $10,000 or complex situations. The IRS audits high-income and self-employed filers more frequently — proper documentation is critical.
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Tax Planning & Guidance Tool v1.0</strong></p>
+            <p>A free, open-source resource for multi-income households to explore advanced tax strategies.</p>
+            <p style="margin-top: 1rem; color: #999;">This tool is for educational purposes. All calculations are estimates. For your specific situation, consult a qualified tax professional.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Tab Switching
+        function switchTab(tabName) {
+            const sections = document.querySelectorAll('.section');
+            const tabs = document.querySelectorAll('.nav-tab');
+            
+            sections.forEach(s => s.classList.remove('active'));
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            window.scrollTo(0, 0);
+        }
+        
+        // Toggle sections based on checkboxes
+        document.getElementById('hasSelfEmployment')?.addEventListener('change', function() {
+            document.getElementById('selfEmploymentSection').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('hasPassive')?.addEventListener('change', function() {
+            document.getElementById('passiveSection').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('hasHSA')?.addEventListener('change', function() {
+            document.getElementById('hsaSection').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('hasEducation')?.addEventListener('change', function() {
+            document.getElementById('educationSection').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('hasSolo401k')?.addEventListener('change', function() {
+            document.getElementById('solo401kSection').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('has1099')?.addEventListener('change', function() {
+            document.getElementById('contractor1099Section').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        // Calculations
+        function calculateIncome() {
+            const w2Income = parseFloat(document.getElementById('w2Income').value) || 0;
+            const seIncome = parseFloat(document.getElementById('seIncome').value) || 0;
+            const seExpenses = parseFloat(document.getElementById('seExpenses').value) || 0;
+            const rentalIncome = parseFloat(document.getElementById('rentalIncome').value) || 0;
+            const rentalExpenses = parseFloat(document.getElementById('rentalExpenses').value) || 0;
+            const dividends = parseFloat(document.getElementById('dividendIncome').value) || 0;
+            const gains = parseFloat(document.getElementById('capitalGains').value) || 0;
+            
+            const seNetIncome = seIncome - seExpenses;
+            const rentalNetIncome = rentalIncome - rentalExpenses;
+            const totalGrossIncome = w2Income + seNetIncome + rentalNetIncome + dividends + gains;
+            
+            // Self-employment tax (simplified)
+            const seTax = (seNetIncome > 0) ? (seNetIncome * 0.9235 * 0.153) : 0;
+            const agi = totalGrossIncome - (seTax / 2);
+            
+            const result = `
+                <div class="result-output">
+                    <h4>Income Summary</h4>
+                    <table>
+                        <tr><td><strong>W-2 Employment Income</strong></td><td style="text-align: right;">$${w2Income.toLocaleString()}</td></tr>
+                        <tr><td><strong>Self-Employment Net Income</strong></td><td style="text-align: right;">$${seNetIncome.toLocaleString()}</td></tr>
+                        <tr><td><strong>Rental Property Net Income</strong></td><td style="text-align: right;">$${rentalNetIncome.toLocaleString()}</td></tr>
+                        <tr><td><strong>Qualified Dividends</strong></td><td style="text-align: right;">$${dividends.toLocaleString()}</td></tr>
+                        <tr><td><strong>Long-Term Capital Gains</strong></td><td style="text-align: right;">$${gains.toLocaleString()}</td></tr>
+                        <tr style="background: #f0f7ff;"><td><strong>Total Gross Income</strong></td><td style="text-align: right;"><strong>$${totalGrossIncome.toLocaleString()}</strong></td></tr>
+                        <tr><td><strong>Self-Employment Tax (est.)</strong></td><td style="text-align: right;">-$${seTax.toLocaleString(undefined, {maximumFractionDigits: 0})}</td></tr>
+                        <tr style="background: #f0f7ff;"><td><strong>Estimated AGI</strong></td><td style="text-align: right;"><strong>$${agi.toLocaleString(undefined, {maximumFractionDigits: 0})}</strong></td></tr>
+                    </table>
+                </div>
+            `;
+            
+            document.getElementById('incomeResult').innerHTML = result;
+        }
+        
+        function calculateDeductions() {
+            const mortgage = parseFloat(document.getElementById('mortgageInterest').value) || 0;
+            const propertyTax = parseFloat(document.getElementById('propertyTaxes').value) || 0;
+            const charitable = parseFloat(document.getElementById('charitableDonations').value) || 0;
+            const saltOther = parseFloat(document.getElementById('saltOther').value) || 0;
+            const vehicleReg = parseFloat(document.getElementById('vehicleReg').value) || 0;
+            
+            const totalItemized = mortgage + propertyTax + charitable + saltOther + vehicleReg;
+            
+            // 2025 standard deductions
+            const standardDeduction = {
+                'single': 14600,
+                'mfj': 29200,
+                'mfs': 14600,
+                'hoh': 21900,
+                'qw': 29200
+            };
+            
+            const filingStatus = document.getElementById('filingStatus').value;
+            const standardDed = standardDeduction[filingStatus] || 29200;
+            
+            const result = `
+                <div class="result-output">
+                    <h4>Deductions Analysis</h4>
+                    <table>
+                        <tr><td><strong>Mortgage Interest</strong></td><td style="text-align: right;">$${mortgage.toLocaleString()}</td></tr>
+                        <tr><td><strong>Property Taxes</strong></td><td style="text-align: right;">$${propertyTax.toLocaleString()}</td></tr>
+                        <tr><td><strong>Charitable Donations</strong></td><td style="text-align: right;">$${charitable.toLocaleString()}</td></tr>
+                        <tr><td><strong>Sales/Income Tax & Vehicle Reg</strong></td><td style="text-align: right;">$${(saltOther + vehicleReg).toLocaleString()}</td></tr>
+                        <tr style="background: #f0f7ff;"><td><strong>Total Itemized Deductions</strong></td><td style="text-align: right;"><strong>$${totalItemized.toLocaleString()}</strong></td></tr>
+                        <tr style="background: #ffe8e8;"><td><strong>Standard Deduction (${filingStatus.toUpperCase()})</strong></td><td style="text-align: right;"><strong>$${standardDed.toLocaleString()}</strong></td></tr>
+                    </table>
+                    <p style="margin-top: 1rem; padding: 1rem; background: #f0f7ff; border-radius: 6px;">
+                        <strong>Recommendation:</strong> ${totalItemized > standardDed ? 
+                        `<span style="color: #28a745;">✓ ITEMIZE</span> to save $${(totalItemized - standardDed).toLocaleString()} in deductions.` :
+                        `<span style="color: #666;">Use the <strong>Standard Deduction</strong> of $${standardDed.toLocaleString()}.</span>`}
+                    </p>
+                </div>
+            `;
+            
+            document.getElementById('deductionsResult').innerHTML = result;
+        }
+        
+        function calculateRetirement() {
+            const iraAmount = parseFloat(document.getElementById('iraAmount').value) || 0;
+            const solo401kDeferred = parseFloat(document.getElementById('solo401kDeferred').value) || 0;
+            const solo401kEmployer = parseFloat(document.getElementById('solo401kEmployer').value) || 0;
+            const hsaAmount = parseFloat(document.getElementById('hsaContribution').value) || 0;
+            
+            const totalRetirementSavings = iraAmount + solo401kDeferred + solo401kEmployer + hsaAmount;
+            
+            // Rough tax benefit (using 24% marginal bracket as estimate)
+            const taxBenefit = totalRetirementSavings * 0.24;
+            
+            const result = `
+                <div class="result-output">
+                    <h4>Retirement Savings Impact</h4>
+                    <table>
+                        <tr><td><strong>IRA Contributions</strong></td><td style="text-align: right;">$${iraAmount.toLocaleString()}</td></tr>
+                        <tr><td><strong>Solo 401(k) Employee Deferral</strong></td><td style="text-align: right;">$${solo401kDeferred.toLocaleString()}</td></tr>
+                        <tr><td><strong>Solo 401(k) Employer Profit-Sharing</strong></td><td style="text-align: right;">$${solo401kEmployer.toLocaleString()}</td></tr>
+                        <tr><td><strong>HSA Contribution</strong></td><td style="text-align: right;">$${hsaAmount.toLocaleString()}</td></tr>
+                        <tr style="background: #f0f7ff;"><td><strong>Total Tax-Advantaged Savings</strong></td><td style="text-align: right;"><strong>$${totalRetirementSavings.toLocaleString()}</strong></td></tr>
+                    </table>
+                    <div class="summary-card" style="margin-top: 1rem;">
+                        <h4>Estimated Tax Benefit (at 24% marginal rate)</h4>
+                        <div class="summary-value">$${taxBenefit.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('retirementResult').innerHTML = result;
+        }
+        
+        function calculateQBI() {
+            const qbiIncome = parseFloat(document.getElementById('qbiIncome').value) || 0;
+            const w2WagesPaid = parseFloat(document.getElementById('w2WagesPaid').value) || 0;
+            const agi = parseFloat(document.getElementById('w2Income').value) || 0;
+            
+            // Simplified QBI calculation (20% of QBI, subject to wage/property limits for higher income)
+            const qbiDeduction = qbiIncome * 0.20;
+            
+            const result = `
+                <div class="result-output" style="margin-top: 1rem;">
+                    <h4>QBI Deduction Estimate</h4>
+                    <p><strong>Qualified Business Income:</strong> $${qbiIncome.toLocaleString()}</p>
+                    <p><strong>20% Deduction (before limits):</strong> $${qbiDeduction.toLocaleString()}</p>
+                    <div class="info-box">
+                        <strong>Note:</strong> For higher earners, QBI is limited to the <strong>greater of:</strong> (1) 20% of QBI, or (2) 20% of W-2 wages paid + 2.5% of property basis. 
+                        <br/><br/>
+                        If you paid W-2 wages of $${w2WagesPaid.toLocaleString()}, the wage-based limit would be $${(w2WagesPaid * 0.20).toLocaleString()}.
+                        <br/><br/>
+                        <strong>Your QBI deduction is likely:</strong> $${qbiDeduction.toLocaleString()}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('qbiResult').innerHTML = result;
+        }
+        
+        function calculateLossHarvest() {
+            const lossCarryforward = parseFloat(document.getElementById('lossCarryforward').value) || 0;
+            const gainsThisYear = parseFloat(document.getElementById('capitalGainsThisYear').value) || 0;
+            
+            const absLoss = Math.abs(lossCarryforward);
+            const agaistGains = Math.min(absLoss, gainsThisYear);
+            const againstOrdinary = Math.min(3000, absLoss - agaistGains);
+            const remaining = absLoss - agaistGains - againstOrdinary;
+            
+            const result = `
+                <div class="result-output" style="margin-top: 1rem;">
+                    <h4>Capital Loss Utilization Strategy</h4>
+                    <p><strong>Carryforward Available:</strong> $${absLoss.toLocaleString()}</p>
+                    <p><strong>Capital Gains (this year):</strong> $${gainsThisYear.toLocaleString()}</p>
+                    <table>
+                        <tr><td><strong>Use against capital gains:</strong></td><td style="text-align: right;">$${agaistGains.toLocaleString()}</td></tr>
+                        <tr><td><strong>Use against ordinary income (max $3k/yr):</strong></td><td style="text-align: right;">$${againstOrdinary.toLocaleString()}</td></tr>
+                        <tr style="background: #f0f7ff;"><td><strong>Remaining carryforward:</strong></td><td style="text-align: right;">$${remaining.toLocaleString()}</td></tr>
+                    </table>
+                    <div class="success-box" style="margin-top: 1rem;">
+                        <strong>Tax Benefit:</strong> Approximately $${(againstOrdinary * 0.24).toLocaleString(undefined, {maximumFractionDigits: 0})} saved in federal tax this year (at 24% bracket).
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('lossResult').innerHTML = result;
+        }
+        
+        function generatePrompt() {
+            // Collect all form data
+            const firstName = document.getElementById('firstName').value || 'Taxpayer';
+            const filingStatus = document.getElementById('filingStatus').value;
+            const state = document.getElementById('state').value;
+            const taxYear = document.getElementById('taxYear').value;
+            
+            const w2Income = parseFloat(document.getElementById('w2Income').value) || 0;
+            const seIncome = parseFloat(document.getElementById('seIncome').value) || 0;
+            const seExpenses = parseFloat(document.getElementById('seExpenses').value) || 0;
+            const dividends = parseFloat(document.getElementById('dividendIncome').value) || 0;
+            const capitalGains = parseFloat(document.getElementById('capitalGains').value) || 0;
+            const capitalLoss = parseFloat(document.getElementById('capitalLoss').value) || 0;
+            
+            const mortgageInterest = parseFloat(document.getElementById('mortgageInterest').value) || 0;
+            const propertyTaxes = parseFloat(document.getElementById('propertyTaxes').value) || 0;
+            const charitable = parseFloat(document.getElementById('charitableDonations').value) || 0;
+            
+            const iraAmount = parseFloat(document.getElementById('iraAmount').value) || 0;
+            const solo401kDeferred = parseFloat(document.getElementById('solo401kDeferred').value) || 0;
+            const solo401kEmployer = parseFloat(document.getElementById('solo401kEmployer').value) || 0;
+            
+            const qbiIncome = parseFloat(document.getElementById('qbiIncome').value) || 0;
+            const businessMiles = parseFloat(document.getElementById('businessMiles').value) || 0;
+            const homeOfficeSqFt = parseFloat(document.getElementById('homeOfficeSqFt').value) || 0;
+            
+            const customPrompt = document.getElementById('customPrompt').value || '';
+            
+            const prompt = `
+## Tax Planning & Optimization Request for ${taxYear}
+
+I'm seeking a comprehensive tax strategy review and optimization plan for the current tax year. Here's my complete financial profile:
+
+### FILER INFORMATION
+- **Filing Status:** ${filingStatus.toUpperCase()}
+- **State of Residence:** ${state}
+- **Tax Year:** ${taxYear}
+
+### INCOME STREAMS
+
+#### 1. W-2 Employment Income
+- Annual wages: $${w2Income.toLocaleString()}
+- Employer retirement plan: No
+
+#### 2. Self-Employment Income
+- Gross business income: $${seIncome.toLocaleString()}
+- Business expenses: $${seExpenses.toLocaleString()}
+- Net self-employment income: $${(seIncome - seExpenses).toLocaleString()}
+- Expected QBI (Qualified Business Income): $${qbiIncome.toLocaleString()}
+
+#### 3. Investment Income
+- Qualified dividends: $${dividends.toLocaleString()}
+- Long-term capital gains: $${capitalGains.toLocaleString()}
+- Capital loss carryforward: $${capitalLoss.toLocaleString()}
+
+### DEDUCTIONS & EXPENSES
+
+#### Itemized Deductions
+- Mortgage interest paid: $${mortgageInterest.toLocaleString()}
+- Property taxes paid: $${propertyTaxes.toLocaleString()}
+- Charitable contributions: $${charitable.toLocaleString()}
+
+#### Business Expenses
+- Estimated annual business miles: ${businessMiles.toLocaleString()}
+- Home office square footage: ${homeOfficeSqFt.toLocaleString()} sq ft
+
+### RETIREMENT SAVINGS OPPORTUNITIES
+
+#### Planned Contributions
+- IRA contribution: $${iraAmount.toLocaleString()}
+- Solo 401(k) employee deferral: $${solo401kDeferred.toLocaleString()}
+- Solo 401(k) employer profit-sharing: $${solo401kEmployer.toLocaleString()}
+
+### STRATEGIC QUESTIONS & PRIORITIES
+${customPrompt ? `Additional context: ${customPrompt}` : 'I need help optimizing my overall tax liability across all income streams.'}
+
+### WHAT I'M ASKING FOR:
+
+1. **Income Analysis & AGI Optimization**
+   - Calculate my estimated AGI after all deductions
+   - Identify which deductions have the most impact
+   - Suggest timing strategies (e.g., prepaying 2026 state/local taxes in December)
+
+2. **Retirement Planning Analysis**
+   - Is my Solo 401(k) strategy optimal, or should I consider alternatives?
+   - Should I prioritize employee deferrals or employer contributions?
+   - What's the maximum I can contribute while maintaining tax deductions?
+
+3. **QBI Deduction Optimization**
+   - What's my maximum allowable QBI deduction given my W-2 income?
+   - Are there wage-basis limits I should be aware of?
+   - How do QBI loss carryforwards work (if applicable)?
+
+4. **Capital Gains & Loss Strategy**
+   - How should I deploy my capital loss carryforward?
+   - Should I harvest losses or gains strategically?
+   - What's the optimal long-term vs. short-term capital gains mix?
+
+5. **Business Structure & Expense Optimization**
+   - What business expenses am I missing?
+   - Should I track and claim mileage deductions (business miles)?
+   - Is the home office deduction worthwhile?
+   - What documentation should I maintain for audit protection?
+
+6. **Dependent & Family Planning**
+   - Could I reduce taxable income by employing family members?
+   - Are there education credits (AOTC, Lifetime Learning) I should consider?
+   - What about dependent exemption phases-outs?
+
+7. **State Tax Considerations**
+   - I live in ${state}. Are there state-specific strategies I should know?
+   - Should I consider relocating for tax purposes?
+
+8. **Compliance & Audit Risk**
+   - What are the highest-risk items on my return?
+   - How should I document my deductions to withstand audit?
+   - What records should I maintain for the next 3–7 years?
+
+9. **Action Items & Timeline**
+   - Provide a prioritized list of actions with deadlines
+   - When should I file Form 1099-NEC? (if applicable)
+   - When is my Solo 401(k) deadline? (establishment vs. funding)
+   - Any quarterly estimated tax adjustments needed?
+
+10. **Comparison & Alternatives**
+   - Should I consider a different business entity (S-Corp, C-Corp)?
+   - Are there alternative retirement account structures?
+   - What are the trade-offs of each approach?
+
+### OUTPUT FORMAT REQUESTED:
+
+Please provide:
+1. **Executive Summary** (2–3 key strategies with expected tax savings)
+2. **Detailed Analysis** (broken down by income stream and opportunity)
+3. **Action Plan** (prioritized, with deadlines and owner responsibilities)
+4. **Risk Assessment** (audit triggers and documentation requirements)
+5. **Follow-up Questions** (for CPA or tax attorney review)
+
+### IMPORTANT CONTEXT:
+- I ${!document.getElementById('employerRetirementPlan').checked ? 'do NOT' : 'do'} have access to an employer retirement plan, which opens strategic opportunities
+- I am self-employed and actively managing multiple income sources
+- I prefer conservative, IRS-approved strategies with strong documentation
+- I want to minimize audit risk while maximizing legitimate tax deductions
+
+---
+
+**Please treat this as if you're a tax CPA or enrolled agent reviewing my return. Be specific, cite regulations where applicable, and provide clear next steps.**
+`;
+            
+            document.getElementById('generatedPrompt').textContent = prompt.trim();
+        }
+        
+        function copyPrompt() {
+            const prompt = document.getElementById('generatedPrompt').textContent;
+            navigator.clipboard.writeText(prompt).then(() => {
+                alert('✅ Prompt copied to clipboard! Ready to paste into Claude or ChatGPT.');
+            });
+        }
+        
+        function appendFollowUp(question) {
+            const currentPrompt = document.getElementById('customPrompt').value;
+            if (currentPrompt) {
+                document.getElementById('customPrompt').value = currentPrompt + '\n- ' + question;
+            } else {
+                document.getElementById('customPrompt').value = '- ' + question;
+            }
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', function() {
+            generatePrompt();
+        });
+    </script>
+</body>
+</html>
